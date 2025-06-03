@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+    
+    char operator;
+    int leftOperand, rightOperand;
+
+    printf("Operator? Left Operand? Right Operand?\n");
+    scanf(" %c %d %d", &operator, &leftOperand, &rightOperand);
+
+    switch (operator) {
+        case '+':
+            printf("Computing: %d + %d\n", leftOperand, rightOperand);
+            printf("Result: %d\n", leftOperand + rightOperand);
+            break;
+        case '-':
+            printf("Computing: %d - %d\n", leftOperand, rightOperand);
+            printf("Result: %d\n", leftOperand - rightOperand);
+            break;
+        case '*':
+            printf("Computing: %d * %d\n", leftOperand, rightOperand);
+            printf("Result: %d\n", leftOperand * rightOperand);
+            break;
+        case '/':
+            if (rightOperand == 0) {
+                printf("Unable to compute divide by zero!\n");
+            } else {
+                printf("Computing: %d / %d\n", leftOperand, rightOperand);
+                printf("Result: %d\n", leftOperand / rightOperand);
+            }
+            break;
+        case '%':
+            if (rightOperand == 0) {
+                printf("Unable to compute divide by zero!\n");
+            } else {
+                printf("Computing: %d %% %d\n", leftOperand, rightOperand);
+                printf("Result: %d\n", leftOperand % rightOperand);
+            }
+            break;
+        default:
+            printf("Invalid operator.\n");
+    }
+
+    return 0;
+}
