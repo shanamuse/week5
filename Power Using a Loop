@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int base, power, result = 1;
+
+    printf("Enter the base:\n");
+    scanf("%d", &base);
+
+    printf("Enter the power:\n");
+    scanf("%d", &power);
+
+    if (power == 0) {
+        printf("%d ^ %d which is 1\n", base, power);
+        return 0;
+    }
+
+    printf("%d ^ %d is the same as...\n\n", base, power);
+
+    for (int i = 0; i < power; i++) {
+        printf("%d", base);
+        if (i < power - 1) {
+            printf(" * ");
+        }
+        result *= base;
+    }
+
+    printf(" which is %d\n", result);
+
+    return 0;
+}
