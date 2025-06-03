@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(){ 
+    char secretWord[128];
+
+    printf("Enter a secret word:\n");
+    scanf("%127s", secretWord);  
+    for (int i = 0; secretWord[i] != '\0'; i++) {
+        if (secretWord[i] >= 'b' && secretWord[i] <= 'z') {
+            secretWord[i] = secretWord[i] - 1; 
+        } else if (secretWord[i] == 'a') {
+            secretWord[i] = 'z'; 
+        } else if (secretWord[i] >= 'B' && secretWord[i] <= 'Z') {
+            secretWord[i] = secretWord[i] - 1;  
+        } else if (secretWord[i] == 'A') {
+            secretWord[i] = 'Z'; 
+        }
+    }
+
+    printf("Decrypted: %s\n", secretWord);
+
+    return 0;
+}
