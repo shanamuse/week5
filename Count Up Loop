@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    for (int i = 40; i <= 400; i += 10) {
+        printf("%d", i);
+        if (i < 400) {
+            printf(", ");
+        }
+    }
+
+    printf("\n"); 
+
+    return 0;
+}
