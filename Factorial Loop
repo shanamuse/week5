@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int number;
+    unsigned long long result = 1;  
+    
+    printf("Enter a non-negative whole number:\n");
+    scanf("%d", &number);
+
+    if (number < 0) {
+        printf("Bad Input! %d is negative...\n", number);
+        return 0;
+    }
+
+    if (number == 0) {
+        printf("0! is 1\n");
+        return 0;
+    }
+
+    for (int i = number; i >= 1; i--) {
+        result *= i;
+    }
+
+    printf("%d! is %llu\n", number, result);
+
+    return 0;
+}
