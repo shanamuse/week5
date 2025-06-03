@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    char word[128];
+
+    printf("Enter a word to encrypt:\n");
+    scanf("%127s", word); 
+    
+    for (int i = 0; word[i] != '\0'; i++) {
+        if (word[i] >= 'a' && word[i] <= 'y') {
+            word[i] = word[i] + 1;  
+        } else if (word[i] == 'z') {
+            word[i] = 'a';      
+        } else if (word[i] >= 'A' && word[i] <= 'Y') {
+            word[i] = word[i] + 1; 
+        } else if (word[i] == 'Z') {
+            word[i] = 'A';          
+        }
+    }
+
+    printf("Encrypted: %s\n", word);
+
+    return 0;
+}
