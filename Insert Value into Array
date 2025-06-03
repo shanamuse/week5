@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100];
+    int numElements, newValue, insertIndex;
+
+    printf("Input total number of elements required:\n");
+    scanf("%d", &numElements);
+
+    for (int i = 0; i < numElements; i++) {
+        printf("Input element [%d]:\n", i);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nBefore insertion:\n");
+    for (int i = 0; i < numElements; i++) {
+        printf("Element [%d] is %d\n", i, arr[i]);
+    }
+    
+    printf("\nInput a new value to insert:\n");
+    scanf("%d", &newValue);
+
+    printf("Input where to insert the value %d:\n", newValue);
+    scanf("%d", &insertIndex);
+
+    for (int i = numElements; i > insertIndex; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    arr[insertIndex] = newValue;
+    numElements++; 
+    
+    printf("After insertion:\n");
+    for (int i = 0; i < numElements; i++) {
+        printf("Element [%d] is %d\n", i, arr[i]);
+    }
+
+    return 0;
+}
