@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main() {
+    int numbers[5];
+    char operation;
+    int sum = 0, product = 1;
+
+    printf("Input five whole numbers:\n");
+    printf("--------------------------\n\n");
+
+    for (int i = 0; i < 5; i++) {
+        printf("Enter number %d:\n", i + 1);
+        scanf("%d", &numbers[i]);
+    }
+
+    printf("\nThe five numbers are: { ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d", numbers[i]);
+        if (i < 4) {
+            printf(", ");
+        }
+    }
+    printf(" }\n\n");
+
+    printf("Would you like to sum or multiply the elements (s/m)?\n");
+    scanf(" %c", &operation);
+
+    if (operation == 's') {
+        printf("The sum of  ");
+        for (int i = 0; i < 5; i++) {
+            printf("%d", numbers[i]);
+            if (i < 4) {
+                printf(" + ");
+            }
+        }
+for (int i = 0; i < 5; i++) {
+            sum += numbers[i];
+        }
+        printf(" is %d\n", sum);  
+    } else if (operation == 'm') {
+        printf("The multiplication of  ");  
+        for (int i = 0; i < 5; i++) {
+            printf("%d", numbers[i]);
+            if (i < 4) {
+                printf(" * ");
+            }
+        }
+        for (int i = 0; i < 5; i++) {
+            product *= numbers[i];
+        }
+        printf(" is %d\n", product);  
+    } else {
+        printf("Invalid operation\n");
+    }
+
+    return 0;
+}
