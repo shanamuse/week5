@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int start, stop, step;
+    int i, count = 0;
+
+    printf("Starting number:\n");
+    scanf("%d", &start);
+
+    printf("Stopping number:\n");
+    scanf("%d", &stop);
+
+    printf("Step size:\n");
+    scanf("%d", &step);
+
+    if (step <= 0) {
+        printf("Invalid step size. Must be a positive whole number.\n");
+        return 1;
+    }
+
+    printf("Using a for loop:\n\n");
+    printf("Starting at %d...\n\n", start);
+
+    for (i = start; i <= stop; i += step) {
+        printf("In loop: %d...\n", i);
+        count++;
+    }
+
+    printf("\nStopping at %d...\n\n", stop);
+    printf("This loop did %d iterations.\n", count);
+
+    return 0;
+}
